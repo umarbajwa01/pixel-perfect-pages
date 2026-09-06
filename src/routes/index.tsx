@@ -48,7 +48,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  const [activeService, setActiveService] = useState(services[0].slug);
+  const [activeService, setActiveService] = useState(services[0]!.slug);
   const [t, setT] = useState(0);
 
   return (
@@ -245,11 +245,11 @@ function Index() {
               What Our Clients Say About Us
             </h2>
             <div className="mt-10 border border-white/15 p-10 text-center">
-              <p className="text-lg italic">"{testimonials[t].quote}"</p>
+              <p className="text-lg italic">"{testimonials[t]!.quote}"</p>
               <p className="mt-6 font-display text-xl font-bold">
-                {testimonials[t].name}
+                {testimonials[t]!.name}
               </p>
-              <p className="text-ink-foreground/70">{testimonials[t].role}</p>
+              <p className="text-ink-foreground/70">{testimonials[t]!.role}</p>
               <div className="mt-8 flex justify-center gap-2">
                 {testimonials.map((item, i) => (
                   <button
